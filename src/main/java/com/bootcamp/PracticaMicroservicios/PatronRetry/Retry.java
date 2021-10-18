@@ -10,7 +10,7 @@ public class Retry {
 	public void conexion() throws InterruptedException {
 		for (int i = 0; i < this.maxIntentos; i++) {
 			System.out.println("Intento " + (i+1));
-			if (i < 2) { //Error de conexion
+			if (i < this.maxIntentos - 1) { //Error de conexion
 				System.out.println("Error de conexion");
 				Thread.sleep(1000);
 			}
