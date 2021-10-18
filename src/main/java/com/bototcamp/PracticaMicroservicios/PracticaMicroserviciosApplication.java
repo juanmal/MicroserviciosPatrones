@@ -27,6 +27,17 @@ public class PracticaMicroserviciosApplication implements CommandLineRunner {
 		UsuarioSingleton s = UsuarioSingleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
 		System.out.println(s);
 		UsuarioSingleton s2 = UsuarioSingleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
+		
+		System.out.println(s.hashCode());
+		System.out.println(s2.hashCode());
+
+		UsuarioSingleton.deleteInstance();
+		UsuarioSingleton s3 = UsuarioSingleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
+		UsuarioSingleton s4 = UsuarioSingleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
+		
+		System.out.println(s3.hashCode());
+		System.out.println(s4.hashCode());
+
 	}
 
 }

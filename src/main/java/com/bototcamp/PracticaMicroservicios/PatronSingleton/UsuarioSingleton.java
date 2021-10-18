@@ -23,6 +23,10 @@ public class UsuarioSingleton {
 		}
 		return instancia;		
 	}
+	
+	public static void deleteInstance() {
+		instancia = null;
+	}
 
 	@Override
 	public String toString() {
