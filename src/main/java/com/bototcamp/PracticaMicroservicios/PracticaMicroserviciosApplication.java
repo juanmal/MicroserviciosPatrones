@@ -19,6 +19,10 @@ public class PracticaMicroserviciosApplication implements CommandLineRunner {
 		Usuario u = new UsuarioBuilder().email("prueba@gmail.com").nombre("Nombbe").telefono("654312312").direccion("Calle falsa 123").build();
 		
 		System.out.println(u);
+		
+		Singleton s = Singleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
+		System.out.println(s);
+		Singleton s2 = Singleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
 	}
 
 }
