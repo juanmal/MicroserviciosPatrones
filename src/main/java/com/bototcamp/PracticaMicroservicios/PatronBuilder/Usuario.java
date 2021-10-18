@@ -1,4 +1,4 @@
-package com.bototcamp.PracticaMicroservicios;
+package com.bototcamp.PracticaMicroservicios.PatronBuilder;
 
 public class Usuario {
 	private String email;

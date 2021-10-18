@@ -1,4 +1,4 @@
-package com.bototcamp.PracticaMicroservicios;
+package com.bototcamp.PracticaMicroservicios.PatronSingleton;
 
 public class Singleton {
 	private String nombre;
