@@ -1,23 +1,23 @@
 package com.bototcamp.PracticaMicroservicios.PatronSingleton;
 
-public class Singleton {
+public class UsuarioSingleton {
 	private String nombre;
 	private String email;
 	private String direccion;
 	private String telefono;
 	
-	private static Singleton instancia;
+	private static UsuarioSingleton instancia;
 	
-	private Singleton(String nombre, String email, String direccion, String telefono) {
+	private UsuarioSingleton(String nombre, String email, String direccion, String telefono) {
 		this.nombre = nombre;
 		this.email = email;
 		this.direccion = direccion;
 		this.telefono = telefono;
 	}
 	
-	public static Singleton getSingletonInstance(String nombre, String email, String direccion, String telefono) {
+	public static UsuarioSingleton getSingletonInstance(String nombre, String email, String direccion, String telefono) {
 		if (instancia == null) {
-			instancia = new Singleton(nombre, email, direccion, telefono);
+			instancia = new UsuarioSingleton(nombre, email, direccion, telefono);
 		} else {
 			System.out.println("Ya existe una instancia de este objeto");
 		}

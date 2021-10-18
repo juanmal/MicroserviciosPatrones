@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.bototcamp.PracticaMicroservicios.PatronBuilder.Usuario;
 import com.bototcamp.PracticaMicroservicios.PatronBuilder.UsuarioBuilder;
-import com.bototcamp.PracticaMicroservicios.PatronSingleton.Singleton;
+import com.bototcamp.PracticaMicroservicios.PatronSingleton.UsuarioSingleton;
 
 
 public class PracticaMicroserviciosApplication implements CommandLineRunner {
@@ -24,9 +24,9 @@ public class PracticaMicroserviciosApplication implements CommandLineRunner {
 		
 		System.out.println(u);
 		
-		Singleton s = Singleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
+		UsuarioSingleton s = UsuarioSingleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
 		System.out.println(s);
-		Singleton s2 = Singleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
+		UsuarioSingleton s2 = UsuarioSingleton.getSingletonInstance("Nombre1", "Email1", "Direccion1", "Telefono1");
 	}
 
 }
