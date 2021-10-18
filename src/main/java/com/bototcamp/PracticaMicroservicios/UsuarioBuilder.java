@@ -5,8 +5,7 @@ public class UsuarioBuilder {
 	private Usuario u;
 	
 	public UsuarioBuilder() {
-		if (u == null) 
-			u = new Usuario();
+		u = new Usuario();
 	}
 	
 	public Usuario build() {	
