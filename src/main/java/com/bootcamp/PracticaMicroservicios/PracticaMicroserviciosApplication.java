@@ -62,7 +62,7 @@ public class PracticaMicroserviciosApplication implements CommandLineRunner {
 			System.out.println("Intento " + (i+1));
 			if (i < 2) { //Error de conexion
 				System.out.println("Error de conexion");
-				//Thread.sleep(1000);
+				Thread.sleep(1000);
 			}
 			else {
 				System.out.println("Conexion realizada");
