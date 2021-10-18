@@ -8,7 +8,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@SpringBootApplication
 public class PracticaMicroserviciosApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
@@ -17,12 +16,9 @@ public class PracticaMicroserviciosApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {	
-		Usuario u = new UsuarioBuilder()
-				.email("prueba@gmail.com")
-				.nombre("Nombbe")
-				.telefono("654312312")
-				.direccion("Calle falsa 123")
-				.build();
+		Usuario u = new UsuarioBuilder().email("prueba@gmail.com").nombre("Nombbe").telefono("654312312").direccion("Calle falsa 123").build();
+		
+		System.out.println(u);
 	}
 
 }

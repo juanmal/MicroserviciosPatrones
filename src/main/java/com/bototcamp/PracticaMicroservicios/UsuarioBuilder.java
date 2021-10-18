@@ -5,17 +5,17 @@ public class UsuarioBuilder {
 	private Usuario u;
 	
 	public UsuarioBuilder() {
-		u = new Usuario();
+		if (u == null) 
+			u = new Usuario();
 	}
 	
 	public Usuario build() {	
-		
-		
+				
 		return u;
 	}
 	
 	public UsuarioBuilder nombre(String nombre) {
-		u.setEmail(nombre);
+		u.setNombre(nombre);
 		
 		return this;
 	}
@@ -27,13 +27,13 @@ public class UsuarioBuilder {
 	}
 	
 	public UsuarioBuilder telefono(String telefono) {
-		u.setEmail(telefono);
+		u.setTelefono(telefono);
 		
 		return this;
 	}
 	
 	public UsuarioBuilder direccion(String direccion) {
-		u.setEmail(direccion);
+		u.setDireccion(direccion);
 		
 		return this;
 	}

@@ -31,5 +31,10 @@ public class Usuario {
 		this.direccion = direccion;
 	}
 	
+	@Override
+	public String toString() {
+		return "Usuario [email=" + email + ", nombre=" + nombre + ", telefono=" + telefono + ", direccion=" + direccion
+				+ "]";
+	}	
 	
 }
