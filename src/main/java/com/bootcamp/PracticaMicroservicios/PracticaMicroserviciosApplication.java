@@ -6,14 +6,17 @@ import java.util.Date;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
-import com.bootcamp.PracticaMicroservicios.Coche.Coche;
-import com.bootcamp.PracticaMicroservicios.Coche.Estado;
 import com.bootcamp.PracticaMicroservicios.PatronBuilder.Usuario;
 import com.bootcamp.PracticaMicroservicios.PatronBuilder.UsuarioBuilder;
+import com.bootcamp.PracticaMicroservicios.PatronCircuitBreaker.Coche;
+import com.bootcamp.PracticaMicroservicios.PatronCircuitBreaker.Estado;
 import com.bootcamp.PracticaMicroservicios.PatronPrototype.Camiseta;
 import com.bootcamp.PracticaMicroservicios.PatronPrototype.CamisetaCorta;
 import com.bootcamp.PracticaMicroservicios.PatronPrototype.CamisetaLarga;
+import com.bootcamp.PracticaMicroservicios.PatronRetry.Retry;
 import com.bootcamp.PracticaMicroservicios.PatronSingleton.UsuarioSingleton;
 
 @SpringBootApplication
@@ -57,22 +60,14 @@ public class PracticaMicroserviciosApplication implements CommandLineRunner {
 		
 		System.out.println("\n---------- Retry ----------");
 		
-		int intentos = 3;
-		for (int i = 0; i < intentos; i++) {
-			System.out.println("Intento " + (i+1));
-			if (i < 2) { //Error de conexion
-				System.out.println("Error de conexion");
-				Thread.sleep(1000);
-			}
-			else {
-				System.out.println("Conexion realizada");
-			}
-		}
+		Retry retry = new Retry(3);
+		retry.conexion();
+		
 		
 		System.out.println("\n---------- CircuitBreaker ----------");
 		Estado parado = new Estado("Parado");  // Estado: CLOSE. El coche se encuentra parado
 		Estado arrancado = new Estado("Arrancado");  // Estado: OPEN. El coche se encuentra arrancado
-		Estado ruedaPinchada = new Estado("Rueda pinchad");  // Estado: HALF_OPEN. El coche tiene una rueda pinchada, puede continuar.
+		Estado ruedaPinchada = new Estado("Rueda pinchada ");  // Estado: HALF_OPEN. El coche tiene una rueda pinchada, puede continuar.
 		Estado falloArranque = new Estado("Fallo al arrancar"); // Estado especial 1: DISABLED. Fallo al arrancar.
 		Estado ruedaReventada = new Estado("Rueda reventada"); // Estado especial 2: FORCED_OPEN. Rueda reventada, no puede continuar.
 		
@@ -98,9 +93,7 @@ public class PracticaMicroserviciosApplication implements CommandLineRunner {
 		
 		// Del estado Rueda pinchada (HALF_OPEN) pasa a Rueda reventada (FORCED_OPEN)
 		Coche cocheRuedaReventada = cochePinchado.getEstado().transicion("ruedaReventada", cochePinchado);
-		
-		
-		
+
 	}
 
 }

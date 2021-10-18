@@ -1,4 +1,4 @@
-package com.bootcamp.PracticaMicroservicios.Coche;
+package com.bootcamp.PracticaMicroservicios.PatronCircuitBreaker;
 
 import java.util.HashMap;
 
