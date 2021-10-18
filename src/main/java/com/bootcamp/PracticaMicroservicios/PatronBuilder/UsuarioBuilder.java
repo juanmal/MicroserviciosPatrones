@@ -1,4 +1,4 @@
-package com.bototcamp.PracticaMicroservicios.PatronBuilder;
+package com.bootcamp.PracticaMicroservicios.PatronBuilder;
 
 public class UsuarioBuilder {
 	

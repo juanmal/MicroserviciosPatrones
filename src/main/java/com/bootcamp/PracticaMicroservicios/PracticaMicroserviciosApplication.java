@@ -1,4 +1,4 @@
-package com.bototcamp.PracticaMicroservicios;
+package com.bootcamp.PracticaMicroservicios;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,9 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.bototcamp.PracticaMicroservicios.PatronBuilder.Usuario;
-import com.bototcamp.PracticaMicroservicios.PatronBuilder.UsuarioBuilder;
-import com.bototcamp.PracticaMicroservicios.PatronSingleton.UsuarioSingleton;
+import com.bootcamp.PracticaMicroservicios.PatronBuilder.Usuario;
+import com.bootcamp.PracticaMicroservicios.PatronBuilder.UsuarioBuilder;
+import com.bootcamp.PracticaMicroservicios.PatronSingleton.UsuarioSingleton;
 
 
 public class PracticaMicroserviciosApplication implements CommandLineRunner {
